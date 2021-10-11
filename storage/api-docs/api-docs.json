@@ -1,0 +1,309 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api Record",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/owner/flotta": {
+            "get": {
+                "summary": "Lista flotte per utente ed eventuali sottoutenti",
+                "operationId": "App\\Http\\Controllers\\v4\\TraxController::utenti_flotte",
+                "parameters": [
+                    {
+                        "name": "secret",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "*******************"
+                        }
+                    },
+                    {
+                        "name": "X-Requested-With",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "XMLHttpRequest"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "application/json"
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "application/json"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/owner/posizione/flotta/{idFlotta}": {
+            "post": {
+                "summary": "Posizione di tutti i dispositivi nella flotta selezionata",
+                "operationId": "App\\Http\\Controllers\\v4\\TraxController::flotta_posizione",
+                "parameters": [
+                    {
+                        "name": "secret",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "*******************"
+                        }
+                    },
+                    {
+                        "name": "X-Requested-With",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "XMLHttpRequest"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "application/json"
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "application/json"
+                        }
+                    },
+                    {
+                        "name": "idFlotta",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "TimeZoneAdjustment": {
+                                        "type": "number",
+                                        "format": "number",
+                                        "example": "2"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/owner/posizione/servizio/{idServizio}": {
+            "post": {
+                "summary": "Posizione di un servizio specifico",
+                "operationId": "App\\Http\\Controllers\\v4\\TraxController::mezzo_posizione",
+                "parameters": [
+                    {
+                        "name": "secret",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "*******************"
+                        }
+                    },
+                    {
+                        "name": "X-Requested-With",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "XMLHttpRequest"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "application/json"
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "application/json"
+                        }
+                    },
+                    {
+                        "name": "idServizio",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "TimeZoneAdjustment": {
+                                        "type": "number",
+                                        "format": "number",
+                                        "example": "2"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/owner/storico/{idServizio}": {
+            "post": {
+                "summary": "Storico di posizioni per un servizio",
+                "operationId": "App\\Http\\Controllers\\v4\\TraxController::storico",
+                "parameters": [
+                    {
+                        "name": "secret",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "*******************"
+                        }
+                    },
+                    {
+                        "name": "X-Requested-With",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "XMLHttpRequest"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "application/json"
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string",
+                            "example": "application/json"
+                        }
+                    },
+                    {
+                        "name": "idServizio",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "TimeZoneAdjustment": {
+                                        "type": "number",
+                                        "format": "number",
+                                        "example": "2"
+                                    },
+                                    "FromDate": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "2020-08-01 00:00:00"
+                                    },
+                                    "ToDate": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "2020-08-01 23:59:59"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

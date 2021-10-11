@@ -1,0 +1,23 @@
+[Unit]
+Description=Starts the workers for every Record API queue
+After=network.target
+Requires=network.target
+StartLimitIntervalSec=0
+
+# Quando lui starta, avvia anche le altre cose
+Wants=apiposizioniqueue.service apimailsqueue.service
+
+[Service]
+Type=simple
+PIDFile=/run/apiqueues.pid
+User=www-data
+Group=www-data
+# ExecStart=/usr/bin/env php /var/www/official/API/artisan queue:work --memory=256
+ExecStart=/usr/bin/env sh echo "..."
+RestartSec=500ms
+Restart=always
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
+Alias=recordapilaravel recordapi recordqueues

@@ -1,0 +1,385 @@
+{
+  "utente": [
+    {
+      "id": "1",
+      "idTipologia": "23",
+      "username": "iMatto",
+      "password": "ferrari",
+      "password_confirmation": "ferrari",
+      "operatore": "iMatto"
+    },
+    {
+      "id": "4",
+      "idTipologia": "23",
+      "username": "borghini",
+      "password": "matteo",
+      "password_confirmation": "matteo",
+      "operatore": "borghini"
+    },
+    {
+      "id": "668",
+      "idTipologia": "36",
+      "username": "abassocosto",
+      "password": "abc1610",
+      "password_confirmation": "abc1610",
+      "operatore": "iMatto"
+    }
+  ],
+  "anagrafica": [
+    {
+      "idGenere": 21,
+      "pIva": "03226270043",
+      "ragSoc": "A Basso Costo",
+      "idCommerciale": 4,
+      "tipologia": [
+        {
+          "idTipologia": 12
+        }
+      ],
+      "utente": [
+        "abassocosto"
+      ],
+      "rubrica": [
+        {
+          "nome": "eMail",
+          "recapito": [
+            {
+              "contatto": "info@abassocostorent.com",
+              "idTipologia": 24,
+              "predefinito": 0
+            }
+          ]
+        },
+        {
+          "nome": "eMail",
+          "recapito": [
+            {
+              "contatto": "info@abassocostorent.com",
+              "idTipologia": 24,
+              "predefinito": 0
+            }
+          ]
+        }
+      ],
+      "fatturazione": [
+        {
+          "id": "614",
+          "idModalita": "42",
+          "idCadenza": "46",
+          "idPeriodo": "69",
+          "sdi": "P62QHVQ",
+          "banca": "Bcc Di Cheraso",
+          "iban": "IT50Y0848746200000010104849"
+        }
+      ],
+      "indirizzo": [
+        {
+          "idTipologia": 17,
+          "provincia": "CN",
+          "nazione": "IT",
+          "comune": "Roreto Di Cherasco",
+          "cap": "12060",
+          "via": "Via Cuneo, 61"
+        }
+      ],
+      "servizio": [
+        {
+          "idPeriodo": 55,
+          "idCausale": 31,
+          "prezzo": 120,
+          "dataInizio": "2018-02-01",
+          "componente": [
+            {
+              "unitcode": "2064110979",
+              "modello": {
+                "idTipologia": 10,
+                "modello": "X-0",
+                "operatore": "iMatto",
+                "brand": {
+                  "marca": "Xtrax",
+                  "operatore": "iMatto"
+                }
+              },
+              "operatore": "iMatto",
+              "sim": {
+                "serial": "89430301901601181165",
+                "modello": {
+                  "idTipologia": 11,
+                  "modello": "Scheda SIM",
+                  "operatore": "borghini",
+                  "brand": {
+                    "marca": "T-mobile",
+                    "operatore": "borghini"
+                  }
+                },
+                "operatore": "iMatto"
+              }
+            }
+          ],
+          "mezzo": [
+            {
+              "targa": "EL 019 XS",
+              "colore": "BIANCO",
+              "info": "FIAT DUCATO",
+              "modello": {
+                "idTipologia": 61,
+                "modello": "Ducato",
+                "operatore": "iMatto",
+                "brand": {
+                  "marca": "Fiat",
+                  "operatore": "iMatto"
+                }
+              },
+              "operatore": "iMatto"
+            }
+          ]
+        },
+        {
+          "idPeriodo": 55,
+          "idCausale": 31,
+          "prezzo": 120,
+          "dataInizio": "2017-03-16",
+          "componente": [
+            {
+              "unitcode": "2064111779",
+              "modello": {
+                "idTipologia": 10,
+                "modello": "X-0",
+                "operatore": "iMatto",
+                "brand": {
+                  "marca": "Xtrax",
+                  "operatore": "iMatto"
+                }
+              },
+              "operatore": "iMatto",
+              "sim": {
+                "serial": "89430301901604122133",
+                "modello": {
+                  "idTipologia": 11,
+                  "modello": "Scheda SIM",
+                  "operatore": "borghini",
+                  "brand": {
+                    "marca": "T-mobile",
+                    "operatore": "borghini"
+                  }
+                },
+                "operatore": "iMatto"
+              }
+            }
+          ],
+          "mezzo": [
+            {
+              "targa": "FH 286 DE",
+              "colore": "GRIGIO SCURO",
+              "info": "OPEL VIVARO",
+              "modello": {
+                "idTipologia": 61,
+                "modello": "Vivaro",
+                "operatore": "iMatto",
+                "brand": {
+                  "marca": "Opel",
+                  "operatore": "iMatto"
+                }
+              },
+              "operatore": "iMatto"
+            }
+          ]
+        },
+        {
+          "idPeriodo": 55,
+          "idCausale": 31,
+          "prezzo": 120,
+          "dataInizio": "2017-06-01",
+          "componente": [
+            {
+              "unitcode": "2009100053",
+              "modello": {
+                "idTipologia": 10,
+                "modello": "X-0 EASY",
+                "operatore": "iMatto",
+                "brand": {
+                  "marca": "Xtrax",
+                  "operatore": "iMatto"
+                }
+              },
+              "operatore": "iMatto",
+              "sim": {
+                "serial": "89430301901604122141",
+                "modello": {
+                  "idTipologia": 11,
+                  "modello": "Scheda SIM",
+                  "operatore": "borghini",
+                  "brand": {
+                    "marca": "T-mobile",
+                    "operatore": "borghini"
+                  }
+                },
+                "operatore": "iMatto"
+              }
+            }
+          ],
+          "mezzo": [
+            {
+              "targa": "FP 563 CW",
+              "colore": "BIANCO",
+              "info": "FIAT DUCATO",
+              "modello": {
+                "idTipologia": 61,
+                "modello": "Ducato",
+                "operatore": "iMatto",
+                "brand": {
+                  "marca": "Fiat",
+                  "operatore": "iMatto"
+                }
+              },
+              "operatore": "iMatto"
+            }
+          ]
+        },
+        {
+          "idPeriodo": 55,
+          "idCausale": 30,
+          "prezzo": 120,
+          "dataInizio": "2017-05-01",
+          "componente": [
+            {
+              "unitcode": "2064112211",
+              "modello": {
+                "idTipologia": 10,
+                "modello": "X-0",
+                "operatore": "iMatto",
+                "brand": {
+                  "marca": "Xtrax",
+                  "operatore": "iMatto"
+                }
+              },
+              "operatore": "iMatto",
+              "sim": {
+                "serial": "89430301901702052034",
+                "modello": {
+                  "idTipologia": 11,
+                  "modello": "Scheda SIM",
+                  "operatore": "borghini",
+                  "brand": {
+                    "marca": "T-mobile",
+                    "operatore": "borghini"
+                  }
+                },
+                "operatore": "iMatto"
+              }
+            }
+          ],
+          "mezzo": [
+            {
+              "targa": "FN 477 GW",
+              "colore": "BIANCO",
+              "info": "RENAULT TRAFIC",
+              "modello": {
+                "idTipologia": 61,
+                "modello": "IMPORT auto",
+                "operatore": "borghini",
+                "brand": {
+                  "marca": "Import",
+                  "operatore": "borghini"
+                }
+              },
+              "operatore": "iMatto"
+            }
+          ]
+        },
+        {
+          "idPeriodo": 55,
+          "idCausale": 30,
+          "prezzo": 120,
+          "dataInizio": "2018-12-01",
+          "componente": [
+            {
+              "unitcode": "2064114473",
+              "modello": {
+                "idTipologia": 10,
+                "modello": "X-0",
+                "operatore": "iMatto",
+                "brand": {
+                  "marca": "Xtrax",
+                  "operatore": "iMatto"
+                }
+              },
+              "operatore": "iMatto",
+              "sim": {
+                "serial": "89430301901805189907",
+                "modello": {
+                  "idTipologia": 11,
+                  "modello": "Scheda SIM",
+                  "operatore": "borghini",
+                  "brand": {
+                    "marca": "T-mobile",
+                    "operatore": "borghini"
+                  }
+                },
+                "operatore": "iMatto"
+              }
+            }
+          ],
+          "mezzo": [
+            {
+              "targa": "FG 700 FW",
+              "colore": "BIANCO",
+              "info": "FIAT DUCATO",
+              "modello": {
+                "idTipologia": 61,
+                "modello": "Ducato",
+                "operatore": "iMatto",
+                "brand": {
+                  "marca": "Fiat",
+                  "operatore": "iMatto"
+                }
+              },
+              "operatore": "iMatto"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "flotta": [
+    {
+      "flotta": "a basso costo",
+      "defaultIcon": "camion",
+      "bloccato": "0",
+      "utente": [
+        {
+          "nickname": "a basso costo",
+          "username": "abassocosto",
+          "operatore": "iMatto"
+        }
+      ],
+      "servzio": [
+        {
+          "nickname": "ABC-001",
+          "unitcode": 2009100053,
+          "operatore": "iMatto"
+        },
+        {
+          "nickname": "ABC-002",
+          "unitcode": 2064111779,
+          "operatore": "iMatto"
+        },
+        {
+          "nickname": "ABC-003",
+          "unitcode": 2064112211,
+          "operatore": "iMatto"
+        },
+        {
+          "nickname": "ABC-004",
+          "unitcode": 2064110979,
+          "operatore": "iMatto"
+        },
+        {
+          "nickname": "ABC-005",
+          "unitcode": 2064114473,
+          "operatore": "iMatto"
+        }
+      ]
+    }
+  ]
+}

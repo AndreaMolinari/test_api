@@ -1,0 +1,18 @@
+[Unit]
+Description=Start the worker for the 'soglie' queue
+After=network.target
+Requires=network.target
+StartLimitIntervalSec=0
+PartOf=apiqueues.service apiposizioniqueue.service
+
+[Service]
+Type=simple
+PIDFile=/run/apitargetsqueue.pid
+User=www-data
+Group=www-data
+ExecStart=/usr/bin/env php /var/www/official/API/artisan queue:work --queue="targets" --memory=1024
+RestartSec=500ms
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

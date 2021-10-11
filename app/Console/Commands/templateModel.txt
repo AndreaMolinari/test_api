@@ -1,0 +1,15 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class {{$modelName}} extends Model
+{
+    protected $connection = 'mysql';
+    public $table = '{{$tableName}}';
+
+    protected $fillable = [
+        // TODO Proprietà tabella 
+    ];
+}

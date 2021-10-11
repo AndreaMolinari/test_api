@@ -12,7 +12,7 @@ WORKDIR /backend_cnt
 
 RUN chown -R www-data:www-data /backend_cnt
 
-COPY --chown=www-data:www-data ../api .
+COPY --chown=www-data:www-data ./ .
 
 # Install required deps
 RUN apk add --update --no-cache \

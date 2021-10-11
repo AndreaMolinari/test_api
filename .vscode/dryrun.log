@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/damiano/Development/PHP/API'
+make: Leaving directory '/home/damiano/Development/PHP/API'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+ 

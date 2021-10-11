@@ -1,0 +1,157 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: RecordApi
+host: api.recorditalia.net
+basePath: /api
+tags:
+- name: Trax
+- name: Utente
+schemes: 
+- https
+paths: 
+  login:
+    post:
+      tags: 
+      - Utente
+      parameters: 
+        - in: header
+          name: loggedin
+          schema: 
+            type: int
+          required: true
+          description: 86
+        - in: body
+          name: username
+          schema: 
+            type: string
+          required: true
+          description: username
+        - in: body
+          name: password
+          schema: 
+            type: string
+          required: true
+          description: password
+  Trax/flotta/{idFlotta}:
+    post:
+      tags: 
+      - Trax
+      parameters: 
+        - in: header
+          name: loggedin
+          schema: 
+            type: int
+          required: true
+          description: 86
+        - in: header
+          name: userid
+          schema: 
+            type: string
+          required: true
+          description: id utente
+        - in: body
+          name: idFlotta
+          schema: 
+            type: string
+          required: true
+          description: id flotta
+        - in: body
+          name: idUtente
+          schema: 
+            type: int
+          required: false
+          description: id utente
+  Trax/flotta/posizione:
+    post:
+      tags: 
+      - Trax
+      parameters: 
+        - in: header
+          name: loggedin
+          schema: 
+            type: int
+          required: true
+          description: 86
+        - in: header
+          name: userid
+          schema: 
+            type: string
+          required: true
+          description: id utente
+        - in: body
+          name: idFlotta
+          schema: 
+            type: string
+          required: true
+          description: id flotta
+  Trax/storico/{idServizio}:
+    post:
+      tags: 
+      - Trax
+      parameters: 
+        - in: header
+          name: loggedin
+          schema: 
+            type: int
+          required: true
+          description: 86
+        - in: header
+          name: userid
+          schema: 
+            type: string
+          required: true
+          description: id utente
+        - in: body
+          name: toDate
+          schema: 
+            type: date
+          required: true
+          description: Dalla data
+        - in: body
+          name: fromDate
+          schema: 
+            type: date
+          required: true
+          description: Fino alla data
+  Trax/parziali/{idServizio}:
+    post:
+      tags: 
+      - Trax
+      parameters: 
+        - in: header
+          name: loggedin
+          schema: 
+            type: int
+          required: true
+          description: 86
+        - in: header
+          name: userid
+          schema: 
+            type: string
+          required: true
+          description: id utente
+        - in: body
+          name: toDate
+          schema: 
+            type: date
+          required: true
+          description: Dalla data
+        - in: body
+          name: fromDate
+          schema: 
+            type: date
+          required: true
+          description: Fino alla data
+        - in: body
+          name: start
+          schema: 
+            type: number
+          required: true
+          description: Evento start
+        - in: body
+          name: end
+          schema: 
+            type: number
+          required: true
+          description: Evento stop

@@ -1,0 +1,36 @@
+<VirtualHost *:443>
+        ServerAlias API
+        ServerName api.recorditalia.net
+        DocumentRoot /var/www/official/API/public
+	#DocumentRoot /var/www/APIv1/public
+
+        <IfModule mod_proxy.c>
+            ProxyPreserveHost On
+            ProxyRequests Off
+
+            <Proxy *>
+                    Order deny,allow
+                    Allow from all
+            </Proxy>
+
+            ProxyPassMatch ^/analyzer/(.*)$ http://51.104.190.73/$1
+            ProxyPassReverse /analyzer http://51.104.190.73
+        </IfModule>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+       <Directory "/var/www/official/API/public">
+       #<Directory "/var/www/APIv1/public">
+            Options All
+
+            AllowOverride All
+
+            Order allow,deny
+            Allow from all
+        </Directory>
+
+        Include /etc/letsencrypt/options-ssl-apache.conf
+        SSLCertificateFile /etc/letsencrypt/live/api.recorditalia.net-0001/fullchain.pem
+        SSLCertificateKeyFile /etc/letsencrypt/live/api.recorditalia.net-0001/privkey.pem
+</VirtualHost>

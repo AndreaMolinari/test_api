@@ -1,0 +1,122 @@
+<?php
+namespace App\Http\Controllers\crud;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
+use App\{{$modelName}};
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\DB;
+use Exception;
+
+class {{$controllerName}} extends Controller
+{
+    function __construct()
+    {
+    }
+
+    private function validator(Request $request)
+    {
+        $validatores = Validator::make($request->all(), [
+            'idOperatore' => ['required'],
+        ]);
+        // ! Il validatore lo scrive tua zia?????
+        return $validatores;
+    }
+
+    public function insert(Request $request)
+    {
+        try {
+            // ? l'if serve soltanto per l'importazione
+            $utenteLogged = Auth::user()->dataUtente();
+
+            $request->request->add(['idOperatore' => $utenteLogged->id]);
+
+            $validatores = $this->validator($request);
+
+            if ( $validatores->fails() ){
+                // ? Non sono stato validato
+                return response()->json($validatores->errors(), 422);
+            }else{
+                // ? Sono valido e inserisco tutto
+                $tabella = (new {{$modelName}});
+
+                $tabella->fill($request->all())->save();
+
+                return response()->json({{$modelName}}::find($tabella->id), 201);
+            }
+
+        } catch (Exception $th) {
+            return response()->json($th, 422);
+        }
+    }
+
+    public function update(Request $request, int $id)
+    {
+        try {
+            $record = {{$modelName}}::find($id);
+
+            if (!empty($record)) {
+                $utenteLogged = Auth::user()->dataUtente();
+
+                $request->request->add(['idOperatore' => $utenteLogged->id]);
+                $validatores = $this->validator($request);
+
+                if ( $validatores->fails() ){
+                    // ? Non sono stato validato
+                    return response()->json($validatores->errors(), 422);
+                }else{
+                    // ? Sono valido e inserisco tutto
+                    $tabella = (new {{$modelName}});
+
+                    $tabella->fill($request->all())->save();
+
+                    return response()->json({{$modelName}}::find($id), 200);
+                }
+            } else {
+                    $results = response()->json("Id non trovato", 422);
+            }
+        } catch (Exception $th) {
+            $results = response()->json($th, 422);
+        }
+        return $results;
+    }
+
+    public function getAll()
+    {
+        $results = DB::table((new {{$modelName}}())->table)->get();
+
+        if (count($results) == 0) {
+            $results = response()->json(null, 204);
+        }
+
+        return $results;
+    }
+
+    public function getId($id)
+    {
+        $results = DB::table((new {{$modelName}}())->table)->where('id', $id)->get();
+
+        if (count($results) == 0) {
+            $results = response()->json(null, 204);
+        }
+
+        return $results;
+    }
+
+    public function delete($id)
+    {
+        $result = {{$modelName}}::find($id);
+
+        if (!empty($result)) {
+            $result->delete();
+            $results = response()->json(null, 204);
+        } else {
+            $results = response()->json("Id non trovato", 422);
+        }
+
+        return $results;
+    }
+}

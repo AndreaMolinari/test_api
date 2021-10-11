@@ -1,0 +1,20 @@
+[Unit]
+Description=Start the worker for the 'posizioni' queue
+After=network.target
+Requires=network.target
+StartLimitIntervalSec=0
+PartOf=apiqueues.service
+
+Wants=apisogliequeue.service apitargetsqueue.service
+
+[Service]
+Type=simple
+PIDFile=/run/apiposizioniqueue.pid
+User=www-data
+Group=www-data
+ExecStart=/usr/bin/env php /var/www/official/API/artisan queue:work --queue="posizioni" --memory=2048
+RestartSec=500ms
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

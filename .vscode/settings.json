@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/vendor": false
+    },
+    "conventionalCommits.scopes": [
+        "v5"
+    ],
+    "workbench.colorTheme": "Xcode Default (Dark)",
+    "workbench.iconTheme": "material-icon-theme",
+}
