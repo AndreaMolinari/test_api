@@ -1,0 +1,31 @@
+# /api/docker-compose.yml
+version: '3.9'
+
+networks:
+  api_reverse_proxy_net:
+    driver: bridge
+  api_mariadb_net:
+    driver: bridge
+  api_redis_net:
+    driver: bridge
+
+volumes:
+  api:
+    driver: local
+
+services:
+  api:
+    image: imatto/record_api:fpm-serverino
+    restart: unless-stopped # dev only
+    volumes:
+      - api:/backend
+      - ../logs/api:/backend_cnt/storage/logs
+    deploy:
+      mode: replicated
+      replicas: 1
+    ports: 
+      - 8000
+    networks:
+      - api_reverse_proxy_net
+      - api_mariadb_net
+      - api_redis_net
